@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br><br><br>
+<p>Are you sure you want to delete {{ course.subject }}</p>
+<br>
+<a href="{% url 'attendance' %}">No, go back.</a>
+<br> <br>
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit">Yes</button>
+</form>
+
+{% endblock %}

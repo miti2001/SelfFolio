@@ -1,0 +1,227 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<br> <br> <br>
+
+<h2>All my expenses</h2>
+<br> <br>
+<h6>Total expense = {{ complete_total }}</h6>
+
+<!-- {% if entries %}
+<h4>Total expenses</h4>
+<br>
+<table class="table" id="table">
+    <thead class="thead-light">
+        <tr>
+            <th>User ID</th>
+            <th>Date</th>
+            <th>Category</th>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entry in entries %}
+            <tr>
+                <td>{{ request.user.id }}</td>
+                <td>{{ entry.date }}</td>
+                <td>{{ entry.category }}</td>
+                <td>{{ entry.item }}</td>
+                <td>{{ entry.price }}</td>
+                <td>{{ entry.quantity }}</td>
+                <td>{{ entry.total }}</td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Total</td>
+            <td>{{ complete_total }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endif %} -->
+
+
+<br> <br> <br>
+{% if healthLogs %}
+<h4>Expenditure in healthcare</h4>
+<br>
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th>User ID</th>
+            <th>Date</th>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entry in healthLogs %}
+            <tr>
+                <td>{{ request.user.id }}</td>
+                <td>{{ entry.date }}</td>
+                <td>{{ entry.item }}</td>
+                <td>{{ entry.price }}</td>
+                <td>{{ entry.quantity }}</td>
+                <td>{{ entry.total }}</td>
+                <td><a href="editLog/?id={{ entry.id }}">Edit</a></td>
+                <td><a href="deleteLog/?id={{ entry.id }}">Delete</a></td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Total</td>
+            <td>{{ total1 }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endif %}
+
+
+<br> <br> <br>
+{% if eduLogs %}
+<h4>Expenditure in education</h4>
+<br>
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th>User ID</th>
+            <th>Date</th>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entry in eduLogs %}
+            <tr>
+                <td>{{ request.user.id }}</td>
+                <td>{{ entry.date }}</td>
+                <td>{{ entry.item }}</td>
+                <td>{{ entry.price }}</td>
+                <td>{{ entry.quantity }}</td>
+                <td>{{ entry.total }}</td>
+                <td><a href="editLog/?id={{ entry.id }}">Edit</a></td>
+                <td><a href="deleteLog/?id={{ entry.id }}">Delete</a></td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Total</td>
+            <td>{{ total3 }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endif %}
+
+
+<br> <br> <br>
+{% if foodLogs %}
+<h4>Expenditure in food</h4>
+<br>
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th>User ID</th>
+            <th>Date</th>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entry in foodLogs %}
+            <tr>
+                <td>{{ request.user.id }}</td>
+                <td>{{ entry.date }}</td>
+                <td>{{ entry.item }}</td>
+                <td>{{ entry.price }}</td>
+                <td>{{ entry.quantity }}</td>
+                <td>{{ entry.total }}</td>
+                <td><a href="editLog/?id={{ entry.id }}">Edit</a></td>
+                <td><a href="deleteLog/?id={{ entry.id }}">Delete</a></td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Total</td>
+            <td>{{ total2 }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endif %}
+
+
+<br> <br> <br>
+{% if personalLogs %}
+<h4>Expenditure in personal items</h4>
+<br>
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th>User ID</th>
+            <th>Date</th>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entry in personalLogs %}
+            <tr>
+                <td>{{ request.user.id }}</td>
+                <td>{{ entry.date }}</td>
+                <td>{{ entry.item }}</td>
+                <td>{{ entry.price }}</td>
+                <td>{{ entry.quantity }}</td>
+                <td>{{ entry.total }}</td>
+                <td><a href="editLog/?id={{ entry.id }}">Edit</a></td>
+                <td><a href="deleteLog/?id={{ entry.id }}">Delete</a></td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Total</td>
+            <td>{{ total4 }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endif %}
+
+<br> <br>
+<a href="addLog">Log an expense</a>
+
+{% endblock %}

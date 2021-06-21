@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<script src="{% static 'js/script.js' %}"></script>
+<br><br><br><br>
+<h6>Username: {{ request.user.username }}</h6>
+<h6>Name: {{request.user.first_name}} {{request.user.last_name}}</h6>
+<h6>Email: {{request.user.email}} </h6>
+<h6>Date of Birth: {{request.user.profile.DOB}}</h6>
+<h6>Bio: {{request.user.profile.Bio}}</h6>
+<h6>University: {{request.user.profile.University}}</h6>
+<h6>Profession: {{request.user.profile.Profession}}</h6>
+{% endblock %}

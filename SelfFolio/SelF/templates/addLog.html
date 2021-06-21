@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br> <br> <br>
+
+{% if messages %}
+    {% for message in messages %}
+        <h6 id="message">{{ message }}</h6>
+    {% endfor %}
+{% endif %}
+
+<form method="POST">
+        {% csrf_token %}
+        <p>
+        {{form.date.label}}
+        {{form.date}}
+        </p>
+
+        <p>
+        {{form.category.label}}
+        {{form.category}}
+        </p>
+
+        <p>
+        {{form.item.label}}
+        {{form.item}}
+        </p>
+
+        <p>
+        {{form.price.label}}
+        {{form.price}}
+        </p>
+
+        <p>
+        {{form.quantity.label}}
+        {{form.quantity}}
+        </p>
+
+        <button type="submit">Submit</button>
+
+    <a href="{% url 'expense' %}"> Back </a>
+
+</form>
+
+    <p>
+    {{form.errors}}
+    </p>
+
+
+
+{% endblock %}

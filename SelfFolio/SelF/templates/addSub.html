@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br> <br> <br>
+
+{% if messages %}
+    {% for message in messages %}
+        <h6 id="message">{{ message }}</h6>
+    {% endfor %}
+{% endif %}
+
+<form method="POST">
+        {% csrf_token %}
+        <p>
+        {{form.code.label}}
+        {{form.code}}
+        </p>
+
+        <p>
+        {{form.subject.label}}
+        {{form.subject}}
+        </p>
+
+        <button type="submit">Submit</button>
+
+    <a href="{% url 'attendance' %}"> Back </a>
+
+</form>
+
+    <p>
+    {{form.errors}}
+    </p>
+
+{% endblock %}

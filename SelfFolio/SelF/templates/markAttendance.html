@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br><br><br>
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="radio" id="present" name="attendance" value="present" required>
+    <label for="present">Present</label>
+    <input type="radio" id="absent" name="attendance" value="absent" required>
+    <label for="absent">Absent</label>
+    <button type="submit">Submit</button>
+    <a href="{% url 'attendance' %}"> Back </a>
+</form>
+
+{% endblock %}

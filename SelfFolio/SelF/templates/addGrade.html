@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br> <br> <br>
+
+{% if messages %}
+    {% for message in messages %}
+        <h6 id="message">{{ message }}</h6>
+    {% endfor %}
+{% endif %}
+
+<form method="POST">
+        {% csrf_token %}
+        <p>
+        {{form.semester.label}}
+        {{form.semester}}
+        </p>
+
+        <p>
+        {{form.code.label}}
+        {{form.code}}
+        </p>
+
+        <p>
+        {{form.subject.label}}
+        {{form.subject}}
+        </p>
+
+        <p>
+        {{form.credits.label}}
+        {{form.credits}}
+        </p>
+
+        <p>
+        {{form.pointer.label}}
+        {{form.pointer}}
+        </p>
+
+        <button type="submit">Submit</button>
+
+    <a href="{% url 'grade' %}"> Back </a>
+
+</form>
+
+    <p>
+    {{form.errors}}
+    </p>
+
+{% endblock %}

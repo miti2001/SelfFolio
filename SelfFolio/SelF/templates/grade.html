@@ -1,0 +1,345 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br> <br> <br>
+{% if Sem1 %}
+<h4>Sem1</h4>
+<br>
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th>User ID</th>
+            <th>Code</th>
+            <th>Subject</th>
+            <th>Credits</th>
+            <th>Pointer</th>
+            <th>Credits Earned</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entry in Sem1 %}
+            <tr>
+                <td>{{ request.user.id }}</td>
+                <td>{{ entry.code }}</td>
+                <td>{{ entry.subject }}</td>
+                <td>{{ entry.credits }}</td>
+                <td>{{ entry.pointer }}</td>
+                <td>{{ entry.creditsEarned }}</td>
+                <td><a href="editGrade/?id={{ entry.id }}">Edit</a></td>
+                <td><a href="deleteGrade/?id={{ entry.id }}">Delete</a></td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td>CPI</td>
+            <td>{{ cpi_sem1|floatformat:2 }}</td>
+            <td></td>
+            <td>SPI</td>
+            <td>{{ spi_sem1|floatformat:2 }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endif %}
+
+
+{% if Sem2 %}
+<br> <br> <br>
+<h4>Sem2</h4>
+<br>
+<table class="table" >
+    <thead class="thead-light">
+        <tr>
+            <th>User ID</th>
+            <th>Code</th>
+            <th>Subject</th>
+            <th>Credits</th>
+            <th>Pointer</th>
+            <th>Credits Earned</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entry in Sem2 %}
+            <tr>
+                <td>{{ request.user.id }}</td>
+                <td>{{ entry.code }}</td>
+                <td>{{ entry.subject }}</td>
+                <td>{{ entry.credits }}</td>
+                <td>{{ entry.pointer }}</td>
+                <td>{{ entry.creditsEarned }}</td>
+                <td><a href="editGrade/?id={{ entry.id }}">Edit</a></td>
+                <td><a href="deleteGrade/?id={{ entry.id }}">Delete</a></td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td>CPI</td>
+            <td>{{ cpi_sem2|floatformat:2 }}</td>
+            <td></td>
+            <td>SPI</td>
+            <td>{{ spi_sem2|floatformat:2 }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endif %}
+
+{% if Sem3 %}
+<br> <br> <br>
+<h4>Sem3</h4>
+<br>
+<table class="table" >
+    <thead class="thead-light">
+        <tr>
+            <th>User ID</th>
+            <th>Code</th>
+            <th>Subject</th>
+            <th>Credits</th>
+            <th>Pointer</th>
+            <th>Credits Earned</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entry in Sem3 %}
+            <tr>
+                <td>{{ request.user.id }}</td>
+                <td>{{ entry.code }}</td>
+                <td>{{ entry.subject }}</td>
+                <td>{{ entry.credits }}</td>
+                <td>{{ entry.pointer }}</td>
+                <td>{{ entry.creditsEarned }}</td>
+                <td><a href="editGrade/?id={{ entry.id }}">Edit</a></td>
+                <td><a href="deleteGrade/?id={{ entry.id }}">Delete</a></td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td>CPI</td>
+            <td>{{ cpi_sem3|floatformat:2 }}</td>
+            <td></td>
+            <td>SPI</td>
+            <td>{{ spi_sem3|floatformat:2 }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endif %}
+
+{% if Sem4 %}
+<br> <br> <br>
+<h4>Sem4</h4>
+<br>
+<table class="table" >
+    <thead class="thead-light">
+        <tr>
+            <th>User ID</th>
+            <th>Code</th>
+            <th>Subject</th>
+            <th>Credits</th>
+            <th>Pointer</th>
+            <th>Credits Earned</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entry in Sem4 %}
+            <tr>
+                <td>{{ request.user.id }}</td>
+                <td>{{ entry.code }}</td>
+                <td>{{ entry.subject }}</td>
+                <td>{{ entry.credits }}</td>
+                <td>{{ entry.pointer }}</td>
+                <td>{{ entry.creditsEarned }}</td>
+                <td><a href="editGrade/?id={{ entry.id }}">Edit</a></td>
+                <td><a href="deleteGrade/?id={{ entry.id }}">Delete</a></td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td>CPI</td>
+            <td>{{ cpi_sem4|floatformat:2 }}</td>
+            <td></td>
+            <td>SPI</td>
+            <td>{{ spi_sem4|floatformat:2 }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endif %}
+
+{% if Sem5 %}
+<br> <br> <br>
+<h4>Sem5</h4>
+<br>
+<table class="table" >
+    <thead class="thead-light">
+        <tr>
+            <th>User ID</th>
+            <th>Code</th>
+            <th>Subject</th>
+            <th>Credits</th>
+            <th>Pointer</th>
+            <th>Credits Earned</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entry in Sem5 %}
+            <tr>
+                <td>{{ request.user.id }}</td>
+                <td>{{ entry.code }}</td>
+                <td>{{ entry.subject }}</td>
+                <td>{{ entry.credits }}</td>
+                <td>{{ entry.pointer }}</td>
+                <td>{{ entry.creditsEarned }}</td>
+                <td><a href="editGrade/?id={{ entry.id }}">Edit</a></td>
+                <td><a href="deleteGrade/?id={{ entry.id }}">Delete</a></td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td>CPI</td>
+            <td>{{ cpi_sem5|floatformat:2 }}</td>
+            <td></td>
+            <td>SPI</td>
+            <td>{{ spi_sem5|floatformat:2 }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endif %}
+
+{% if Sem6 %}
+<br> <br> <br>
+<h4>Sem6</h4>
+<br>
+<table class="table" >
+    <thead class="thead-light">
+        <tr>
+            <th>User ID</th>
+            <th>Code</th>
+            <th>Subject</th>
+            <th>Credits</th>
+            <th>Pointer</th>
+            <th>Credits Earned</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entry in Sem6 %}
+            <tr>
+                <td>{{ request.user.id }}</td>
+                <td>{{ entry.code }}</td>
+                <td>{{ entry.subject }}</td>
+                <td>{{ entry.credits }}</td>
+                <td>{{ entry.pointer }}</td>
+                <td>{{ entry.creditsEarned }}</td>
+                <td><a href="editGrade/?id={{ entry.id }}">Edit</a></td>
+                <td><a href="deleteGrade/?id={{ entry.id }}">Delete</a></td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td>CPI</td>
+            <td>{{ cpi_sem6|floatformat:2 }}</td>
+            <td></td>
+            <td>SPI</td>
+            <td>{{ spi_sem6|floatformat:2 }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endif %}
+
+{% if Sem7 %}
+<br> <br> <br>
+<h4>Sem7</h4>
+<br>
+<table class="table" >
+    <thead class="thead-light">
+        <tr>
+            <th>User ID</th>
+            <th>Code</th>
+            <th>Subject</th>
+            <th>Credits</th>
+            <th>Pointer</th>
+            <th>Credits Earned</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entry in Sem7 %}
+            <tr>
+                <td>{{ request.user.id }}</td>
+                <td>{{ entry.code }}</td>
+                <td>{{ entry.subject }}</td>
+                <td>{{ entry.credits }}</td>
+                <td>{{ entry.pointer }}</td>
+                <td>{{ entry.creditsEarned }}</td>
+                <td><a href="editGrade/?id={{ entry.id }}">Edit</a></td>
+                <td><a href="deleteGrade/?id={{ entry.id }}">Delete</a></td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td>CPI</td>
+            <td>{{ cpi_sem7|floatformat:2 }}</td>
+            <td></td>
+            <td>SPI</td>
+            <td>{{ spi_sem7|floatformat:2 }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endif %}
+
+{% if Sem8 %}
+<br> <br> <br>
+<h4>Sem8</h4>
+<br>
+<table class="table" >
+    <thead class="thead-light">
+        <tr>
+            <th>User ID</th>
+            <th>Code</th>
+            <th>Subject</th>
+            <th>Credits</th>
+            <th>Pointer</th>
+            <th>Credits Earned</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entry in Sem8 %}
+            <tr>
+                <td>{{ request.user.id }}</td>
+                <td>{{ entry.code }}</td>
+                <td>{{ entry.subject }}</td>
+                <td>{{ entry.credits }}</td>
+                <td>{{ entry.pointer }}</td>
+                <td>{{ entry.creditsEarned }}</td>
+                <td><a href="editGrade/?id={{ entry.id }}">Edit</a></td>
+                <td><a href="deleteGrade/?id={{ entry.id }}">Delete</a></td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td>CPI</td>
+            <td>{{ cpi_sem8|floatformat:2 }}</td>
+            <td></td>
+            <td>SPI</td>
+            <td>{{ spi_sem8|floatformat:2 }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endif %}
+
+<br> <br>
+<a href="/grade/addGrade">Add another course grades</a>
+
+{% endblock %}
