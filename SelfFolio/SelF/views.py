@@ -65,6 +65,9 @@ def home(request):
 def home(request):
     return render(request, 'home.html')
 
+def profile(request):
+    return render(request,'profile.html')
+
 '''
 def login_func(request):
     if request.method == 'GET':
@@ -258,25 +261,37 @@ def deleteSub(request):
 @login_required(login_url='login_page')
 def expense(request):
     if request.method == 'GET':
+        labels = []
+        data = []
+        
         user_id = request.user.id
         entries = reversed(Expense.objects.filter(userProfile=user_id).order_by('date'))
         healthLogs = Expense.objects.filter(userProfile=user_id, category='Health').order_by('date').reverse()
         total1=0
         for entry in healthLogs:
             total1 = total1 + entry.total
+        labels.append('Health')
+        data.append(total1)
         foodLogs = Expense.objects.filter(userProfile=user_id, category='Food').order_by('date').reverse()
         total2 = 0
         for entry in foodLogs:
             total2 = total2 + entry.total
+        labels.append('Food')
+        data.append(total2)
         eduLogs = Expense.objects.filter(userProfile=user_id, category='Education').order_by('date').reverse()
         total3 = 0
         for entry in eduLogs:
             total3 = total3 + entry.total
+        labels.append('Education')
+        data.append(total3)
         personalLogs = Expense.objects.filter(userProfile=user_id, category='Personal').order_by('date').reverse()
         total4 = 0
         for entry in personalLogs:
             total4 = total4 + entry.total
+        labels.append('Personal')
+        data.append(total4)
         complete_total = total1+total2+total3+total4
+
         return render(request, 'expense.html', {
             'complete_total': complete_total,
             'entries': entries,
@@ -288,6 +303,8 @@ def expense(request):
             'eduLogs': eduLogs,
             'total4': total4,
             'personalLogs': personalLogs,
+            'labels': labels,
+            'data': data,
         })
 
 @login_required(login_url='login_page')

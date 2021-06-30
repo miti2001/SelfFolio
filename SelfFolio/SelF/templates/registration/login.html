@@ -1,26 +1,12 @@
 {% block content %}
 
-<style>
-    h1 {
-        padding: 40px;
-    }
-    input {
-        margin: 5px;
-    }
-    button {
-        margin: 10px;
-        margin-bottom: 20px;
-    }
-</style>
-
-  <h2>Login</h2>
-
 {% if messages %}
     {% for message in messages %}
         <h6 id="message">{{ message }}</h6>
     {% endfor %}
 {% endif %}
 
+<body class="text-center">
   <form method="POST">
     {% csrf_token %}
     <div>
@@ -36,4 +22,6 @@
     <br>
     New to the app? <a href="{% url 'signup' %}">Sign up here</a>
   </form>
+</body>
+
 {% endblock %}
