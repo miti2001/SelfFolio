@@ -3,11 +3,54 @@
 
 {% block content %}
 
-<br> <br> <br>
+<br>
 
 <h2>All my expenses</h2>
 <br> <br>
 <h6>Total expense = {{ complete_total }}</h6>
+
+<div id="container" style="width: 75%;">
+    <canvas id="pie-chart"></canvas>
+    <br>
+    <br>
+    <center>
+        <button type="button" class="btn btn-dark" > <a style="color: white" href="addLog">Log an expense</a> </button>
+    </center>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script>
+
+    var config = {
+      type: 'pie',
+      data: {
+        datasets: [{
+          data: {{ data|safe }},
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          label: 'Expense'
+        }],
+        labels: {{ labels|safe }}
+      },
+      options: {
+        responsive: true
+      }
+    };
+
+    window.onload = function() {
+      var ctx = document.getElementById('pie-chart').getContext('2d');
+      window.myPie = new Chart(ctx, config);
+    };
+
+  </script>
+
+
 
 <!-- {% if entries %}
 <h4>Total expenses</h4>
@@ -222,6 +265,6 @@
 {% endif %}
 
 <br> <br>
-<a href="addLog">Log an expense</a>
+
 
 {% endblock %}

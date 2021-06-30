@@ -28,6 +28,7 @@ urlpatterns = [
     path('login_page/', views.login_func, name='login_page'),
     path('logout_page/', views.logout_func, name="logout_page"),
     path('home/', views.home, name='home'),
+    path('profile/',views.profile, name='profile'),
     path('attendance/', views.attendance, name='attendance'),
     url('addSub/', views.addSub, name='addSub'),
     url('markAttendance/', views.markAttendance, name='markAttendance'),
