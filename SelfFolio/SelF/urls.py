@@ -18,7 +18,11 @@ from django.urls import path, include
 from django.conf.urls import url
 
 #from django.contrib.auth import views as auth_views
-from SelF import views 
+from SelF import views
+from django.contrib import admin
+from django.urls import path, include
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,6 +33,7 @@ urlpatterns = [
     path('logout_page/', views.logout_func, name="logout_page"),
     path('home/', views.home, name='home'),
     path('profile/',views.profile, name='profile'),
+    url('editProfile',views.editProfile, name='editProfile'),
     path('attendance/', views.attendance, name='attendance'),
     url('addSub/', views.addSub, name='addSub'),
     url('markAttendance/', views.markAttendance, name='markAttendance'),
@@ -43,3 +48,5 @@ urlpatterns = [
     url('editGrade/', views.editGrade, name='editGrade'),
     url('deleteGrade', views.deleteGrade, name='deleteGrade'),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

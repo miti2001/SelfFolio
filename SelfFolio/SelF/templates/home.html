@@ -15,18 +15,18 @@
           <img class="first-slide" src="{% static 'images/home1.jpg' %}" alt="First slide">
           <div class="container">
             <div class="carousel-caption text-left">
-              <h1>Example headline.</h1>
-              <p>We are the best.</p>
+              <h1>SelfFolio.</h1>
+              <p>Your friend through college.</p>
             </div>
           </div>
         </div>
         <div class="carousel-item">
-          <img class="second-slide" src="{%static 'images/home1.jpg' %}" alt="Second slide">
+          <img class="second-slide" src="{%static 'images/home2.jpg' %}" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Another example headline.</h1>
+              <h1>Attendance, Grades, Expenses</h1>
               <p>
-                We need not repeat.
+                SelfFolio keeps a track of all the small yet basic requirements of your college life.
               </p>
             </div>
           </div>
@@ -35,9 +35,9 @@
           <img class="third-slide" src="{%static 'images/home3.jpg' %}" alt="Third slide">
           <div class="container">
             <div class="carousel-caption text-right">
-              <h1>One more for good measure.</h1>
+              <h1>Your friend</h1>
               <p>
-                If you do not use us. You're a fool.
+                to help you get through the online semester classes and submissions.
               </p>
             </div>
           </div>
@@ -53,79 +53,33 @@
       </a>
     </div>
 
-
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
     <div class="container marketing">
 
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
-          <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ante ex, tempus sed mattis quis, egestas a neque. Sed at ex magna. Sed pharetra quam lobortis, pharetra augue vitae, ornare risus. Suspendisse nec suscipit ex, eget hendrerit nisi. Maecenas rhoncus magna non tellus posuere volutpat.</p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+          <img class="rounded-circle" src="{%static 'images/calendar.jpg' %}" alt="Generic placeholder image" width="140" height="140">
+          <h2>Attendance Tracker</h2>
+          <p>Attendance tracker helps you keep a track of your attendance for all those subjects with a compulsory attendance policy. Add the subject, mark your presence and absence and let the webApp remember your records for you.</p>
+          <p><a class="btn btn-secondary" href="{% url 'attendance' %}" role="button">Visit</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ante ex, tempus sed mattis quis, egestas a neque. Sed at ex magna. Sed pharetra quam lobortis, pharetra augue vitae, ornare risus. Suspendisse nec suscipit ex, eget hendrerit nisi. Maecenas rhoncus magna non tellus posuere volutpat.</p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+          <img class="rounded-circle" src="{%static 'images/expense.jpg' %}" alt="Generic placeholder image" width="140" height="140">
+          <h2>Expense Tracker</h2>
+          <p>Facing a month end crisis already but don't know where your savings got exhausted? Expense tracker keeps a track of your expenditures for you. Just remember to log your expenses whenever you make one and let the webApp be your accountant.</p>
+          <p><a class="btn btn-secondary" href="{% url 'expense' %}" role="button">Visit</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-          <h2>Heading</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ante ex, tempus sed mattis quis, egestas a neque. Sed at ex magna. Sed pharetra quam lobortis, pharetra augue vitae, ornare risus. Suspendisse nec suscipit ex, eget hendrerit nisi. Maecenas rhoncus magna non tellus posuere volutpat.</p>
-          <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
-
-
-      <!-- START THE FEATURETTES -->
-
-      <!-- <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+          <img class="rounded-circle" src="{%static 'images/calculator.jpg' %}" alt="Generic placeholder image" width="140" height="140">
+          <h2>Grade Calculator</h2>
+          <p>Grade calculator keeps a record of your grades throughout your school/college life. You can create tables for each semester, and the App shall maintain the records and calculate the semester total and the cumulative total for you.</p>
+          <p><a class="btn btn-secondary" href="{% url 'grade' %}" role="button">Visit</a></p>
         </div>
       </div>
 
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7 order-md-2">
-          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5 order-md-1">
-          <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-    -->
       <hr class="featurette-divider"> 
 
-      <!-- /END THE FEATURETTES -->
-
-    </div><!-- /.container -->
+    </div>
 
 
     <!-- FOOTER -->

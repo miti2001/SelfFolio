@@ -2,11 +2,20 @@
 {% load static %}
 
 {% block content %}
+<style>
+  img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+</style>
+
 <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
 <div class="box">
     <div id="overlay">
       <div class="image">
-        <!-- <img src="{% static 'images/profile.jpg'%}"> -->
+        <!--<img src="/static/images/profile1.png">-->
+        <img src="{{request.user.profile.profile_pic.url}}">
       </div>
       <ul class="text">{{request.user.first_name}} {{request.user.last_name}}</ul>
       <div class="text1">{{request.user.profile.Profession}}</div>
@@ -37,6 +46,7 @@
       </div>
     </div>
   </div>
+  <button><a href="editProfile">Edit</a></button>
 </div>
 
 <!-- <script src="{% static 'js/script.js' %}"></script>

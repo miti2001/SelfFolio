@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br> <br> <br>
+
+{% if messages %}
+    {% for message in messages %}
+        <h6 id="message">{{ message }}</h6>
+    {% endfor %}
+{% endif %}
+
+<form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>
+        {{form.first_name.label}}
+        {{form.first_name}}
+        </p>
+
+        <p>
+        {{form.last_name.label}}
+        {{form.last_name}}
+        </p>
+
+        <p>
+        {{form.Bio.label}}
+        {{form.Bio}}
+        </p>
+
+        <p>
+        {{form.DOB.label}}
+        {{form.DOB}}
+        </p>
+
+        <p>
+        {{form.University.label}}
+        {{form.University}}
+        </p>
+
+        <p>
+        {{form.Profession.label}}
+        {{form.Profession}}
+        </p>
+
+        <p>
+        {{form.profile_pic.label}}
+        {{form.profile_pic}}
+        </p>
+
+        <button type="submit">Submit</button>
+
+    <a href="{% url 'profile' %}"> Back </a>
+
+</form>
+
+    <p>
+    {{form.errors}}
+    </p>
+
+{% endblock %}

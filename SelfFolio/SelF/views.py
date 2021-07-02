@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group
 
 from .models import *
-from .forms import CreateUserForm, addSubject, addLog, addPointer
+from .forms import CreateUserForm, addSubject, addLog, addPointer, UpdateUserForm
 
 
 # Create your views here.
@@ -65,8 +65,50 @@ def home(request):
 def home(request):
     return render(request, 'home.html')
 
+@login_required(login_url='login_page')
 def profile(request):
     return render(request,'profile.html')
+
+@login_required(login_url='login_page')
+def editProfile(request):
+    user_id = request.user.id
+    user = User.objects.filter(id=user_id)
+    form = UpdateUserForm(initial={
+        'first_name': user[0].first_name,
+        'last_name': user[0].last_name,
+        'Bio': user[0].profile.Bio,
+        'DOB': user[0].profile.DOB,
+        'University': user[0].profile.University,
+        'Profession': user[0].profile.Profession,
+        'profile_pic': user[0].profile.profile_pic,
+    })
+    if request.method == 'GET':
+        return render(request, 'editProfile.html', {
+            'form': form
+        })
+    else:
+        form = UpdateUserForm(request.POST, request.FILES)
+        if form.is_valid():
+            user = request.user
+            first_name = form.cleaned_data.get('first_name')
+            last_name = form.cleaned_data.get('last_name')
+            Bio = form.cleaned_data.get('Bio')
+            DOB = form.cleaned_data.get('DOB')
+            University = form.cleaned_data.get('University')
+            Profession = form.cleaned_data.get('Profession')
+            profile_pic = form.cleaned_data.get('profile_pic')
+            user.first_name = first_name
+            user.last_name = last_name
+            user.profile.Bio = Bio
+            user.profile.DOB = DOB
+            user.profile.University = University
+            user.profile.Profession = Profession
+            user.profile.profile_pic = profile_pic
+            user.save()
+            return redirect('profile')
+        else:
+            messages.error(request, "Invalid form entries.")
+            return redirect('editProfile')
 
 '''
 def login_func(request):

@@ -24,15 +24,45 @@ class CreateUserForm(UserCreationForm):
         }),
         required=False
     )
-    University = forms.CharField(help_text='Required.')
+    University = forms.CharField(required=False)
     Profession = forms.CharField(
         widget=forms.Select(choices=PROFILE_CATEGORY),
         help_text='Required.'
     )
+    #profile_pic = forms.ImageField(required=False)
 
     class Meta:
         model = User
         fields = ["username", "email", "first_name", "last_name", "DOB", "Bio", "University", "Profession", "password1", "password2"]
+
+class UpdateUserForm(forms.ModelForm):
+    PROFILE_CATEGORY = (
+        ('Student', 'Student'),
+        ('Professional', 'Professional'),
+    )
+
+    DOB = forms.DateField(
+        help_text='Required.',
+        widget=forms.SelectDateWidget(years=range(1960, 2030))
+    )
+    Bio = forms.CharField(
+        widget=forms.Textarea(attrs={
+           'cols': 30,
+           'rows': 3
+        }),
+        required=False
+    )
+    University = forms.CharField(required=False)
+    Profession = forms.CharField(
+        widget=forms.Select(choices=PROFILE_CATEGORY),
+        help_text='Required.'
+    )
+    profile_pic = forms.ImageField(required=False)
+
+    class Meta:
+        model = User
+        fields = ["first_name", "last_name", "DOB", "Bio", "University", "Profession","profile_pic"]
+
 
 class addSubject(forms.ModelForm):
     code = forms.CharField(help_text='Required.')

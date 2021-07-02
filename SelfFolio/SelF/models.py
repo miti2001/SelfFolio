@@ -15,9 +15,10 @@ class Profile (models.Model):
 
     user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
     Bio = models.TextField(blank = True, null=True)
-    University = models.CharField(max_length = 50, null=True)
+    University = models.CharField(max_length = 50, null=True, blank=True)
     Profession = models.CharField(max_length=32, default='Student', choices=PROFILE_CATEGORY, null=True)
     DOB = models.DateField(null=True)
+    profile_pic = models.ImageField(default="profile.png", null=True, blank=True)
     
 
     def __str__ (self):
